@@ -3,6 +3,8 @@ import DeviceSyncPrototype from "./device-sync";
 import BillingPlanPrototype from "./billing-plan";
 import AchievementsPrototype from "./achievements";
 import SegmentHrPrototype from "./segment-hr";
+import FirstSyncStatusPrototype from "./first-sync-status";
+import SocialLoginPrototype from "./social-login";
 
 export type Prototype = {
   slug: string;
@@ -39,6 +41,20 @@ export const prototypes: Prototype[] = [
     description:
       "Tests whether showing HR zone distribution during a segment effort — not just average HR — helps athletes diagnose whether a PR attempt was pacing-limited or cardio-limited. Extends /segment/$id by adding HR visualization alongside the existing map, leaderboard, and PR rails.",
     Component: SegmentHrPrototype,
+  },
+  {
+    slug: "first-sync-status",
+    title: "First-sync status during onboarding",
+    description:
+      "Tests whether an explicit Pending → Synced/Failed status with a manual retry keeps new athletes from silently abandoning onboarding when their first device sync stalls or fails. Extends the end of /onboarding with a device-connect moment that surfaces sync state instead of leaving the screen blank.",
+    Component: FirstSyncStatusPrototype,
+  },
+  {
+    slug: "social-login",
+    title: "Sign in with Apple / Google",
+    description:
+      "Mockup-only exploration of adding Apple and Google sign-in to /auth alongside the existing email form. No real OAuth is wired up — every action (social buttons and the email form) just surfaces a toast confirming it's a design mockup.",
+    Component: SocialLoginPrototype,
   },
 ];
 
