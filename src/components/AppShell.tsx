@@ -14,6 +14,7 @@ import {
 import { ME, clearAppData } from "@/lib/mock-data";
 import { ReactNode } from "react";
 import { logout } from "@/lib/api";
+import { EasterEgg } from "@/components/EasterEgg";
 
 const NAV = [
   { to: "/", label: "Feed", icon: Home },
@@ -138,6 +139,8 @@ export function AppShell({ children }: { children: ReactNode }) {
         </header>
         <main className="max-w-[1280px] mx-auto px-8 py-8">{children}</main>
       </div>
+
+      <EasterEgg />
     </div>
   );
 }
